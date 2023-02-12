@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.henz</groupId>
+  <artifactId>MockitoTest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+     <mockito.version>5.1.1</mockito.version>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.22</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-engine</artifactId>
+		<version>5.7.0</version>
+		<scope>test</scope>
+	</dependency>
+	<!-- important: there was a bug when using Mockito mockConstructionWithAnswer, see https://github.com/mockito/mockito/issues/2544
+	therefore use latest version of mockito
+	-->
+	<dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-inline</artifactId> <!-- by using mockito-inline instead of mockito-core, we can mock static methods -->
+		<version>${mockito.version}</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-junit-jupiter</artifactId>
+		<version>${mockito.version}</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.assertj</groupId>
+		<artifactId>assertj-core</artifactId>
+		<version>3.24.2</version>
+		<scope>test</scope>
+	</dependency>
+  </dependencies>
+  
+</project>
